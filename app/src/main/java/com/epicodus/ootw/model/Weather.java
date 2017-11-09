@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.TimeZone;
 
 public class Weather {
-    private String mIcon;
     private long mTime;
     private double mHumidity;
     private double mTemperature;
@@ -21,13 +20,6 @@ public class Weather {
         mTimezone = timezone;
     }
 
-    public String getIcon() {
-        return mIcon;
-    }
-
-    public void setIcon(String icon) {
-        mIcon = icon;
-    }
 
     public long getTime() {
         return mTime;
