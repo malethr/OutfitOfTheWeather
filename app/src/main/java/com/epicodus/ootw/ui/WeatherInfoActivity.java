@@ -1,12 +1,14 @@
 package com.epicodus.ootw.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -43,6 +45,7 @@ public class WeatherInfoActivity extends AppCompatActivity {
     @Bind(R.id.summaryLabel) TextView mSummaryLabel;
     @Bind(R.id.refreshImageView) ImageView mRefreshImageView;
     @Bind(R.id.progressBar) ProgressBar mProgressBar;
+    @Bind(R.id.moreButton) Button mMoreButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,21 @@ public class WeatherInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_weather_info);
 
         ButterKnife.bind(this);
+
+        mRefreshImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getWeatherForecast(latitude, longitude);
+            }
+        });
+
+        mMoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(WeatherInfoActivity.this, OutfitActivity.class);
+                startActivity(intent);
+            }
+        });
 
         mProgressBar.setVisibility(View.INVISIBLE);
         getWeatherForecast(latitude, longitude);
@@ -130,7 +148,7 @@ public class WeatherInfoActivity extends AppCompatActivity {
 
     private void updateDisplay() {
         mTemperatureLabel.setText(weather.getTemperature() + "");
-        mTimeLabel.setText("At " + weather.getFormattedTime() + " it will be");
+        mTimeLabel.setText("At " + weather.getFormattedTime());
         mHumidityValue.setText(weather.getHumidity()+"");
         mPrecipValue.setText(weather.getPercipChance()+"%");
         mSummaryLabel.setText(weather.getSummary());

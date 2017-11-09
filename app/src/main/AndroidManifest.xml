@@ -3,7 +3,7 @@
           package="com.epicodus.ootw">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -20,6 +20,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.WeatherInfoActivity">
+        </activity>
+        <activity android:name=".ui.OutfitActivity"
+            android:theme="@style/BlueActionBar"
+            android:label="More Options">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.ootw.ui.WeatherInfoActivity"/>
         </activity>
     </application>
 
