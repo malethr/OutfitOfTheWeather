@@ -2,6 +2,7 @@ package com.epicodus.ootw.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
@@ -53,6 +54,9 @@ public class WeatherInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_weather_info);
 
         ButterKnife.bind(this);
+
+        Typeface amaticBold= Typeface.createFromAsset(getAssets(), "fonts/Amatic-Bold.ttf");
+        mMoreButton.setTypeface(amaticBold);
 
         mRefreshImageView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -8,11 +8,90 @@
     tools:context="com.epicodus.ootw.ui.OutfitActivity"
     android:background="@drawable/bg_gradient">
 
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/outfit1"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="149dp"/>
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="600dp"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/outfit1ImageView"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                app:srcCompat="@drawable/outfit1"/>
+
+
+            <ImageView
+                android:id="@+id/outfit2ImageView"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_below="@+id/outfit1ImageView"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                app:srcCompat="@drawable/outfit2"/>
+
+            <ImageView
+                android:id="@+id/outfit3ImageView"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_below="@+id/outfit2ImageView"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                app:srcCompat="@drawable/outfit3"/>
+
+            <TextView
+                android:id="@+id/of1TextView"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_alignBottom="@+id/outfit1ImageView"
+                android:layout_alignRight="@+id/outfit1ImageView"
+                android:background="@drawable/btn_gradient"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="BUY"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextIcons"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/of2TextView"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_alignBottom="@+id/outfit2ImageView"
+                android:layout_alignRight="@+id/outfit2ImageView"
+                android:background="@drawable/btn_gradient"
+                android:text="BUY"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextIcons"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/of3TextView"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_alignBottom="@+id/outfit3ImageView"
+                android:layout_alignRight="@+id/outfit3ImageView"
+                android:background="@drawable/btn_gradient"
+                android:text="BUY"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextIcons"
+                android:textSize="18sp"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
 </android.support.constraint.ConstraintLayout>
